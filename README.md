@@ -243,9 +243,11 @@ public/images/                → Asset (logo, dll)
 
 ## 📸 Screenshot Area
 
-- **Login**: navy gelap + gold accent
-- **Dashboard**: stat card (total mahasiswa, total user, jumlah jurusan), mahasiswa terbaru, alert profil belum lengkap buat user
-- **Daftar Mahasiswa**: tabel + live search/filter + ID card popup
+![Login](public/images/login.png)
+
+![Dashboard](public/images/dashboard.png)
+
+![Mahasiswa](public/images/mahasiswa.png)
 
 ---
 
