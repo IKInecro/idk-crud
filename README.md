@@ -249,6 +249,8 @@ public/images/                → Asset (logo, dll)
 
 ![Mahasiswa](public/images/mahasiswa.png)
 
+![Card Modal](public/images/card%20modal.png)
+
 ---
 
 frontend yang bikin lama ni projek mas :V , backend mah bentar ini
