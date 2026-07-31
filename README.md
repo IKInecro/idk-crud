@@ -182,49 +182,11 @@ Tabel utama (10 total):
 
 ## 📝 Penjelasan Test Case
 
-> Beberapa test case ternyata **mirip/sama**, jadi dijelasin biar gak bingung.
+Seluruh test case dari dosen (TC-LGN-01 s/d TC-DEL-05) sudah **diuji manual satu per satu dan berhasil** ✅
 
-### Login
-| ID | Skenario | Penjelasan |
-|---|---|---|
-| **TC-LGN-01** | Login valid | Pakai `admin@mncu.univ.ac.id` / `jawa1234` → masuk dashboard |
-| **TC-LGN-02** | Email tidak terdaftar | Pesan: **"Email atau password salah."** (tidak bilang email-nya gak ada — biar aman) |
-| **TC-LGN-03** | Password salah | Pesan sama: "Email atau password salah." |
-| **TC-LGN-04** | Field kosong | Validasi `required` → error field kosong |
-| **TC-LGN-05** | Gagal berulang | 5x gagal → lockout 1 menit ("Too many attempts") |
-| **TC-LGN-06** | Akses halaman tanpa login | Middleware `auth` → redirect ke `/login` |
-| **TC-LGN-07** | Logout | Konfirmasi dulu → POST `/logout` → redirect `/login` + pesan |
-| **TC-LGN-08** | Session kadaluarsa | `SESSION_LIFETIME=5` menit → abis itu minta login lagi |
-
-### Input Data (Create)
-| ID | Skenario | Penjelasan |
-|---|---|---|
-| **TC-INP-01** | Semua field valid | Data masuk, muncul flash "berhasil ditambahkan" |
-| **TC-INP-02** | Field wajib kosong | Ditolak, error per-field, data tidak tersimpan |
-| **TC-INP-03** | NIM/email duplikat | `unique` → error "NIM sudah terdaftar." / "Email sudah terdaftar." |
-| **TC-INP-04** | Tanggal invalid | `date` + `before:today` → ditolak |
-| **TC-INP-05** | File > 2MB | Ditolak di browser (alert) + di server |
-| **TC-INP-06** | File jenis tidak diizinkan | `mimes:jpg,jpeg,png` → ditolak |
-| **TC-INP-07** | Batal sebelum simpan | Form gak di-submit, data gak ada di DB |
-
-### Edit Data (Update)
-| ID | Skenario | Penjelasan |
-|---|---|---|
-| **TC-EDT-01** | Buka form edit | Hanya admin, via tombol edit |
-| **TC-EDT-02** | Edit semua valid | Data berubah, flash "berhasil diperbarui" |
-| **TC-EDT-03** | Field wajib dikosongkan | Ditolak, **data lama tetap tersimpan** |
-| **TC-EDT-04** | Nilai unik jadi duplikat | **Sama dengan TC-INP-03**: `unique` ditolak. Bedanya di sini `->ignore(id)` biar data sendiri gak dianggap duplikat |
-| **TC-EDT-05** | Edit tanpa otorisasi | Non-admin → 403 |
-| **TC-EDT-06** | Batal sebelum simpan | **Sama dengan TC-INP-07**: form gak di-submit, data gak berubah |
-
-### Hapus Data (Delete)
-| ID | Skenario | Penjelasan |
-|---|---|---|
-| **TC-DEL-01** | Hapus + konfirmasi setuju | Modal → "Ya, Hapus" → soft delete, hilang dari daftar |
-| **TC-DEL-02** | Batal konfirmasi | Modal ditutup, data **tetap ada** |
-| **TC-DEL-03** | Hapus tanpa otorisasi | Non-admin → 403 |
-| **TC-DEL-04** | Cek data setelah soft delete | **Data tetap ada di DB!** Lihat detail di bawah |
-| **TC-DEL-05** | Hapus data yang sudah gak ada | Route model binding gagal → 404, tidak ada hapus ganda |
+> **Catatan:** Beberapa test case di daftar dosen ternyata **sama/mirip**, jadi ada yang diuji sekaligus:
+> - **TC-INP-03** (nilai unik sudah terdaftar saat input) dan **TC-EDT-04** (nilai unik jadi duplikat saat edit) → intinya sama-sama diuji validasi `unique`.
+> - **TC-INP-07** (membatalkan proses input) dan **TC-EDT-06** (membatalkan proses edit) → intinya sama-sama diuji "tidak disimpan kalau form gak di-submit".
 
 ### 🔍 Detail TC-DEL-04 (Soft Delete)
 
