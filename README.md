@@ -1,6 +1,6 @@
 # Sistem Informasi Akademik — MNC University
 
-Aplikasi web CRUD data mahasiswa (Laravel 13) dengan autentikasi, verifikasi email OTP, role admin/user, dan soft delete. Dibuat buat tugas/testing 😎
+App web buat kelola data mahasiswa pake Laravel 13, ada login-nya, verifikasi email pake kode OTP, ada role admin sama user, terus kalau hapus data mahasiswa itu gak bener-bener ilang (soft delete, tetep nyangkut di database wkwk).
 
 > **Landing page:** "moga gak error :V" — semoga aja pas penguji nyobain gak error wkwk
 
