@@ -17,7 +17,6 @@ Aplikasi web CRUD data mahasiswa (Laravel 13) dengan autentikasi, verifikasi ema
 - [Fitur Autentikasi](#-fitur-autentikasi)
 - [Fitur CRUD Mahasiswa](#-fitur-crud-mahasiswa)
 - [Fitur Unggah Foto](#-fitur-unggah-foto)
-- [Error Page Custom (403/404)](#-error-page-custom-403404)
 - [Penjelasan Test Case](#-penjelasan-test-case)
 
 ---
@@ -134,7 +133,7 @@ Tabel utama (10 total):
 | `/mahasiswa/{id}/edit`, `/mahasiswa/{id}` (update/delete) | GET/PUT/DELETE | **Hanya Admin** (via policy) |
 | `/logout` | POST | **Semua yang login** |
 
-> Non-admin yang paksa akses `/mahasiswa/create` dkk akan dapat **403**. (Error page 403 custom = tombol TEKAN + rock.jpg 😄)
+> Non-admin yang paksa akses `/mahasiswa/create` dkk akan dapat **403**.
 >
 > Yang belum login akses halaman terlindungi → diarahkan ke `/login` otomatis oleh middleware `auth`. Abis login, balik lagi ke halaman yang tadi mau dibuka (`redirect()->intended()`).
 
@@ -178,16 +177,6 @@ Tabel utama (10 total):
 - Pakai **Cropper.js**: pilih foto → crop → konfirmasi
 - File **> 2MB ditolak langsung di browser** (alert sebelum di-crop) — validasi ganda di server juga ada (`max:2048`)
 - Format: jpg, jpeg, png
-
----
-
-## 🤡 Error Page Custom (403/404)
-
-Kalau akses halaman yang gak boleh (403) atau halaman yang gak ada (404):
-
-1. Muncul halaman navy gelap dengan tombol **"TEKAN"**
-2. Klik tombol → **rock.jpg** muncul (50% layar) + **sound.mp3** bunyi (browser butuh user gesture buat autoplay suara)
-3. 1,5 detik → fade out → balik ke halaman sebelumnya, atau `/dashboard` (sudah login) / `/login` (belum login)
 
 ---
 
@@ -281,11 +270,11 @@ app/Http/Requests/            → Validasi create/update & login
 app/Models/                   → User, Mahasiswa (SoftDeletes)
 app/Policies/MahasiswaPolicy.php → Aturan akses admin vs user
 resources/views/              → Blade (auth, mahasiswa, profile, dashboard)
-resources/views/errors/       → 403/404 custom (rock.jpg + sound.mp3)
+resources/views/errors/       → Halaman error 403/404
 routes/web.php & auth.php     → Definisi route
 database/migrations/          → Skema tabel
 database/seeders/             → Seeder admin + mahasiswa
-public/images/                → Asset (logo, rock.jpg, sound.mp3)
+public/images/                → Asset (logo, dll)
 ```
 
 ---
@@ -295,7 +284,6 @@ public/images/                → Asset (logo, rock.jpg, sound.mp3)
 - **Login**: navy gelap + gold accent
 - **Dashboard**: stat card (total mahasiswa, total user, jumlah jurusan), mahasiswa terbaru, alert profil belum lengkap buat user
 - **Daftar Mahasiswa**: tabel + live search/filter + ID card popup
-- **Error 403/404**: tombol TEKAN → rock.jpg + sound.mp3
 
 ---
 
