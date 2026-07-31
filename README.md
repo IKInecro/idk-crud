@@ -251,4 +251,4 @@ public/images/                → Asset (logo, dll)
 
 ---
 
-Dibuat dengan ❤️ + banyak ngoding dan debugging. Semoga lulus testing 🙏
+frontend yang bikin lama ni projek mas :V , backend mah bentar ini
