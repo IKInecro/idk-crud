@@ -182,9 +182,9 @@ Tabel utama (10 total):
 
 ## 📝 Penjelasan Test Case
 
-Seluruh test case dari dosen (TC-LGN-01 s/d TC-DEL-05) sudah **diuji manual satu per satu dan berhasil** ✅
+Seluruh test case (TC-LGN-01 s/d TC-DEL-05) sudah **diuji manual satu per satu dan berhasil** ✅
 
-> **Catatan:** Beberapa test case di daftar dosen ternyata **sama/mirip**, jadi ada yang diuji sekaligus:
+> **Catatan:** Beberapa test case ternyata **sama/mirip**, jadi ada yang diuji sekaligus:
 > - **TC-INP-03** (nilai unik sudah terdaftar saat input) dan **TC-EDT-04** (nilai unik jadi duplikat saat edit) → intinya sama-sama diuji validasi `unique`.
 > - **TC-INP-07** (membatalkan proses input) dan **TC-EDT-06** (membatalkan proses edit) → intinya sama-sama diuji "tidak disimpan kalau form gak di-submit".
 
