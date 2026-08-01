@@ -228,7 +228,7 @@
     </div>
 </div>
 
-    <!-- Delete Confirmation Modal -->
+    <!-- Modal Konfirmasi Hapus -->
     <div id="deleteModal" class="fixed inset-0 z-50 flex items-center justify-center p-4" style="display:none;background:rgba(0,0,0,0.7)">
         <div class="relative w-full max-w-sm rounded-2xl shadow-2xl overflow-hidden" style="background:linear-gradient(145deg,#0c1e3f,#07122e)">
             <div class="p-6 text-center">

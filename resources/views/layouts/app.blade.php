@@ -7,21 +7,21 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Fonts -->
+        <!-- Font -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Cropper.js -->
         <link rel="stylesheet" href="{{ asset('js/cropper.min.css') }}">
 
-        <!-- Scripts -->
+        <!-- Script -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
 
-            <!-- Page Heading -->
+            <!-- Judul Halaman -->
             @isset($header)
                 <header class="bg-white shadow">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
@@ -30,7 +30,7 @@
                 </header>
             @endisset
 
-            <!-- Page Content -->
+            <!-- Isi Halaman -->
             <main>
                 {{ $slot }}
             </main>

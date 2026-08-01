@@ -7,7 +7,7 @@
             <p class="text-blue-200/60 text-sm mt-1">Daftar untuk mulai menggunakan sistem</p>
         </div>
 
-        <!-- Name -->
+        <!-- Nama -->
         <div class="mb-4">
             <label for="name" class="block text-sm font-medium text-blue-100 mb-1.5">Nama Lengkap</label>
             <div class="relative">
@@ -23,7 +23,7 @@
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
 
-        <!-- Email Address -->
+        <!-- Alamat Email -->
         <div class="mb-4">
             <label for="email" class="block text-sm font-medium text-blue-100 mb-1.5">Email</label>
             <div class="relative">
@@ -64,7 +64,7 @@
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
-        <!-- Confirm Password -->
+        <!-- Konfirmasi Password -->
         <div class="mb-6">
             <label for="password_confirmation" class="block text-sm font-medium text-blue-100 mb-1.5">Konfirmasi Password</label>
             <div class="relative">
